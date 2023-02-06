@@ -1,0 +1,334 @@
+:root {
+  font-size: 16px;
+  --main-green: #86efac;
+  --main-grey: #d1d5db;
+  --main-red: #fda4af;
+}
+
+body {
+  background-color: var(--main-grey);
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Pop-up modal */
+.modal {
+  font-size: 1.3em;
+  font-weight: 500;
+  overflow: auto;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 0;
+}
+
+.modal > form {
+  display: flex;
+  z-index: 1333434;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7em;
+  border-radius: 0.5em;
+  opacity: 1;
+  background-color: var(--main-grey);
+  color: black;
+  padding: 2.5%;
+}
+
+.modal > form > span {
+  font-weight: 600;
+}
+
+.toggler-wrapper {
+  display: block;
+  width: 45px;
+  height: 25px;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggler-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+.toggler-wrapper input[type="checkbox"]:checked + .toggler-slider {
+  background-color: #44cc66;
+}
+
+.toggler-wrapper .toggler-slider {
+  background-color: #ccc;
+  position: absolute;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.toggler-wrapper .toggler-knob {
+  position: absolute;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.toggler-wrapper.style-1
+  input[type="checkbox"]:checked
+  + .toggler-slider
+  .toggler-knob {
+  left: calc(100% - 19px - 3px);
+}
+
+.toggler-wrapper.style-1 .toggler-knob {
+  width: calc(25px - 6px);
+  height: calc(25px - 6px);
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+  background-color: #fff;
+}
+
+form > input {
+  padding: 5%;
+  border-radius: 0.5em;
+  border: none;
+}
+
+form > input:focus,
+form > input:active {
+  border: none;
+}
+
+form > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 5px;
+}
+
+#add-btn {
+  border: 3px solid #16a34a;
+}
+
+form > button {
+  cursor: pointer;
+  color: black;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 0.5em;
+  padding: 5%;
+  border: none;
+  font-size: 0.8em;
+}
+
+.errorMsg {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #e11d48;
+  padding: 0;
+  font-weight: 500;
+}
+
+.read {
+  background-color: var(--main-green);
+}
+
+#add-btn:active {
+  background-color: var(--main-green);
+}
+
+/* Header container */
+
+.container > div:first-child {
+  display: flex;
+  background-color: white;
+  flex: 2 1 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5%;
+  padding: 2% 10%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.logo {
+  font-family: "Roboto", sans-serif;
+  text-transform: lowercase;
+  font-size: 2.5em;
+  padding: 1%;
+  margin: 0;
+  font-weight: 800;
+}
+
+.container > div:first-child button {
+  padding: 10% 15%;
+  width: auto;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 0.5em;
+  cursor: pointer;
+  /* background-color: var(--main-grey); */
+  white-space: nowrap;
+}
+
+.container > div:first-child > div {
+  display: flex;
+  gap: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.delall {
+  border: 3px solid #e11d48;
+}
+
+.delall:active {
+  background-color: var(--main-red);
+}
+
+.add {
+  border: 3px solid #16a34a;
+}
+
+.add:active {
+  background-color: var(--main-green);
+}
+
+/* Main context container */
+.booklist {
+  background-color: var(--main-grey);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(autofit, 1fr);
+  padding: 3%;
+  gap: 3%;
+}
+
+p {
+  white-space: pre-wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.book {
+  border-radius: 0.5em;
+  font-size: 1.2em;
+  font-weight: 500;
+  display: flex;
+  padding: 5%;
+  background-color: white;
+  text-align: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.book > button {
+  width: 100%;
+  font-size: 1em;
+  font-weight: 700;
+  color: black;
+  padding: 3% 5%;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.status {
+  border: none;
+  background-color: var(--main-green);
+}
+
+.remove {
+  border: 3px solid #e11d48;
+  /* background-color: var(--main-red); */
+}
+
+.remove:active {
+  background-color: #e11d48;
+  color: white;
+}
+
+.add-book {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5em;
+  gap: 3%;
+  padding: 3%;
+  background-color: white;
+  cursor: pointer;
+}
+
+.add-book > img {
+  width: 30%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #16a34a;
+  content: "bankai";
+  position: absolute;
+  bottom: 0;
+}
+
+/* .add-book:hover {
+  background-color: white;
+} */
+@media (max-width: 1000px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .booklist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .container > div:first-child button {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal > form {
+    width: 70%;
+  }
+
+  .modal > form > input {
+    width: 90%;
+  }
+  .booklist {
+    grid-template-columns: 1fr;
+    margin: 1%;
+  }
+
+  .container > div:first-child button {
+    white-space: nowrap;
+  }
+
+  .container > div:first-child {
+    flex-flow: column nowrap;
+  }
+}

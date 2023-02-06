@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="book.gif" type="image/icon type" />
+  </head>
+  <body>
+    <div class="modal hidden">
+      <form action="">
+        <span>Add new book</span>
+        <input type="text" placeholder="Title" name="title" required />
+        <pre class="errorMsg hidden">
+Book with this
+ name already
+       exists!</pre
+        >
+        <input type="text" placeholder="Author" name="author" required />
+        <input type="number" placeholder="Pages" name="pages" required />
+        <div>
+          <label for="read">Have you read? </label>
+          <label class="toggler-wrapper style-1">
+            <input type="checkbox" id="read" name="read" />
+            <div class="toggler-slider">
+              <div class="toggler-knob"></div>
+            </div>
+          </label>
+        </div>
+        <button type="submit" id="add-btn">Add</button>
+      </form>
+    </div>
+    <div class="container">
+      <div>
+        <h2 class="logo">Library</h2>
+        <div>
+          <button class="add">New Book</button>
+          <button class="delall">Delete All</button>
+        </div>
+      </div>
+      <div class="booklist">
+        <!-- <div class="book">
+          <p>"Book"</p>
+          <p>Murray</p>
+          <p>769 pages</p>
+          <button class="status">Read</button>
+          <button class="remove">Remove</button>
+        </div> -->
+        <div class="add-book">
+          <img src="add.svg" alt="Add Book" />
+          <h2>Add Book</h2>
+        </div>
+      </div>
+    </div>
+    <!-- <footer><p>bankai</p></footer> -->
+    <script src="script.js"></script>
+  </body>
+</html>
