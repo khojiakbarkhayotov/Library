@@ -180,6 +180,7 @@ form > button {
 
 .container > div:first-child button {
   padding: 10% 15%;
+  color: black;
   width: auto;
   font-size: 1em;
   font-weight: 600;
